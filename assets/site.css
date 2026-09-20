@@ -95,7 +95,39 @@ footer {
 
 footer a { color: rgba(255,255,255,0.55); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(201,169,97,0.4); }
 
-.footer-brand { font-family: var(--f-serif); color: var(--washi-dim); display: block; margin-bottom: 12px; font-size: 0.95rem; }
+/* フッターのリンクは3つのまとまりに分ける。狭い画面では2カラムにし、
+ * 最後のまとまり（アプリとサイト）だけ見出しを隠して1行に流す。
+ * 見出しは h2 なので、ページ側の素の h2 規則（枠線・大きさ）を打ち消す値をすべて持たせている。 */
+.footer-links {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px; max-width: 840px; margin: 0 auto; text-align: left;
+  font-size: 0.75rem;
+}
+.footer-col-head {
+  font-family: var(--f-serif); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+  color: var(--gold); margin: 0 0 10px; padding: 0; border: 0; line-height: 1.6;
+}
+.footer-col ul { list-style: none; margin: 0; padding: 0; line-height: 1.9; }
+/* 読み物ページの素の p / li 規則（0.92rem・washi-dim）がフッターに漏れるので、ここで打ち消す */
+.footer-col li { margin: 0 0 4px; font-size: 0.75rem; color: inherit; }
+.footer-note { margin: 0 0 26px; font-size: 0.75rem; color: inherit; }
+/* リンクの列に混ぜない。折り返して割れないよう nowrap にする */
+.footer-copy { margin: 30px 0 0; white-space: nowrap; font-size: 0.75rem; color: inherit; }
+
+@media (max-width: 599px) {
+  .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .footer-col-misc {
+    grid-column: 1 / -1; margin-top: 2px; padding-top: 16px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-col-misc .footer-col-head {
+    position: absolute; width: 1px; height: 1px; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap;
+  }
+  /* 折り返した2行目の先頭に区切り文字が落ちるので、区切りは余白で見せる */
+  .footer-col-misc ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
+  .footer-col-misc li { margin: 0; }
+}
 
 .article-meta { font-size: 0.75rem; color: var(--washi-dim); margin-bottom: 26px; }
 

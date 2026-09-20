@@ -24,8 +24,8 @@
     '@keyframes sd-qr-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}',
     '@media (prefers-reduced-motion:reduce){.sd-qr[open]{animation:none}}',
     '.sd-qr__inner{display:grid;gap:14px;justify-items:center}',
-    '.sd-qr__title{margin:0;font-family:"Shippori Mincho","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;',
-    'font-weight:600;font-size:1.15rem;line-height:1.5;color:#f2ede2}',
+    // 操作の指示文なので明朝ではなく本文と同じゴシック(.sd-qr の指定を継承)
+    '.sd-qr__title{margin:0;font-weight:700;font-size:1.1rem;line-height:1.5;color:#f2ede2}',
     '.sd-qr__img{display:block;width:188px;height:188px;border-radius:10px}',
     '.sd-qr__note{margin:0;font-size:.82rem;line-height:1.7;color:#b5ad9b}',
     '.sd-qr__link{font-size:.78rem;color:#b5ad9b;text-underline-offset:3px}',

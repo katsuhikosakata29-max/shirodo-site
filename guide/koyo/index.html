@@ -68,6 +68,10 @@
 <!-- /shared:head -->
 
 <style>
+  :root {
+    --vermilion: #b0402c;
+  }
+
   main { max-width: 720px; margin: 0 auto; padding: 110px 20px 60px; }
 
   h1 { font-family: var(--f-serif); font-size: 1.75rem; line-height: 1.5; margin-bottom: 10px; }
@@ -110,6 +114,19 @@
     line-height: 1.9;
   }
   .formula b { color: var(--gold-bright); font-weight: 500; }
+
+  /* 注意ブロック。.lead-answer と同じ形で色だけ朱にする（サイトの既存の書式に合わせる） */
+  .caution {
+    padding: 16px 18px; margin: 20px 0 14px;
+    background: var(--sumi-2); border-left: 3px solid var(--vermilion); border-radius: 0 10px 10px 0;
+  }
+  .caution::before {
+    content: "注意"; display: block;
+    font-family: var(--f-serif); font-size: 0.72rem; letter-spacing: 0.18em;
+    color: #d98a77; margin-bottom: 8px;
+  }
+  .caution p { font-size: 0.88rem; }
+  .caution p:last-child { margin-bottom: 0; }
 
   .tbl-wrap { overflow-x: auto; margin: 20px 0 8px; }
   .ctable { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
@@ -357,7 +374,11 @@
       </table>
     </div>
     <p class="tbl-cap">日の入りは11月10日・各城の緯度経度からの計算値です（大気差を含む天文的な日没。地形による稜線の影は考慮していません）。「登り」は<a href="/guide/level/">登城難易度一覧</a>と同じ、最も楽な経路での登り徒歩時間です。</p>
-    <p>🔴 <strong>この締切は、施設が閉まる時刻ではありません。</strong>天守や資料館は日の入りよりずっと早く閉まります。またバス・リフト・ロープウェーを使う城では、<strong>その最終便の方が先に締切になります</strong>。🔴 <strong>表の締切は、この最も楽な経路で登った場合の数字です。麓から歩く場合は、その差のぶんだけ締切が早まります</strong>（たとえば高取城は、壺阪山駅から大手道を歩くと登りが約2時間になるので、締切は表より1時間半以上早くなります）。行く前に各城の公式で運行時間と開館時間を確認してください。</p>
+    <div class="caution">
+      <p><strong>この締切は、施設が閉まる時刻ではありません。</strong>天守や資料館は日の入りよりずっと早く閉まります。バス・リフト・ロープウェーを使う城では、その最終便の方が先に締切になります。</p>
+      <p>また<strong>表の締切は、最も楽な経路で登った場合の数字</strong>です。麓から歩く場合は、その差のぶんだけ早まります。高取城は壺阪山駅から大手道を歩くと登りが約2時間になるので、表より1時間半以上早い計算になります。</p>
+      <p>行く前に、各城の公式で運行時間と開館時間を確認してください。</p>
+    </div>
     <a class="back-to-toc" href="#toc">▲ 目次へ戻る</a>
   </section>
 
@@ -398,14 +419,17 @@
       </table>
     </div>
     <p>熊鈴を着け、朝夕の薄暗い時間帯を避け、単独行動を控えてください。人の少ない山城ほど注意が要ります。</p>
-    <p class="src-note">🔴 記載のない城に熊が出ないという意味ではありません。これは「調査時点で現地にその情報があった」という記録であって、今年の出没状況ではありません。<strong>出没情報は毎年変わります。行く前に必ず、その都道府県が出している最新の出没情報を確認してください。</strong></p>
+    <div class="caution">
+      <p>記載のない城に熊が出ないという意味ではありません。これは「調査時点で現地にその情報があった」という記録であって、今年の出没状況ではありません。</p>
+      <p><strong>出没情報は毎年変わります。行く前に必ず、その都道府県が出している最新の出没情報を確認してください。</strong></p>
+    </div>
     <a class="back-to-toc" href="#toc">▲ 目次へ戻る</a>
   </section>
 
   <section id="koyo">
     <h2>紅葉の見頃はいつ？</h2>
     <p>自治体・観光協会・紅葉情報メディアが<strong>「例年の見頃」として公表している値</strong>を確認できた21城です。見頃の早い順に並べています。公表値が取れない城について、推測で見頃を書くことはしていません。</p>
-    <p>🔴 <strong>100名城すべての紅葉を調べたわけではありません。ここに無い城は「紅葉がない」ではなく「例年の見頃の公表値を確認できていない」という意味です。</strong></p>
+    <p><strong>100名城すべての紅葉を調べたわけではありません。ここに無い城は「紅葉がない」ではなく「例年の見頃の公表値を確認できていない」という意味です。</strong></p>
     <p>また、城そのものではなく<strong>隣接する庭園や公園の値</strong>であることがあります（姫路城なら好古園、岡山城なら後楽園、一乗谷城なら麓の朝倉氏遺跡）。どこの見頃かは「見どころ」の欄に書いています。</p>
     <div class="tbl-wrap">
       <table class="ctable">
